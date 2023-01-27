@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Montserrat+Alternates:wght@300&display=swap');
+
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+
+
+body
+{
+    background-color:  $bgColor ;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: $fontColor;
+
+}
+
+
+.test
+{
+    color: $lightBgColor !important;
+    font-weight: 900 !important;
+}
+
+h1
+{
+    font-weight: 600;
+}
+
+p
+{
+    color: $secondFontColor;
+    font-size: 21px  !important;
+}
+
+a
+{
+        color: #fff;
+        list-style-type: none;
+        
+}
+
+.br
+{
+    height:$borderHeight ;
+    background-color: #a8a8a83d;
+
+}
+
+.w-25
+{
+    width: 25% !important;
+}
+
+.w-95
+{
+    width: 95% !important;
+}
+
+.vote
+{
+    background-color: $lightBgColor ;
+    color:$fontColor ;
+    padding: 5px;
+    top: 0;
+    right: 0;
+}
+
+input
+{
+    background-color: transparent !important;
+    color: #fff !important;
+    border-color: #a8a8a83d !important;
+}
+
+
+.genres{
+    float: left;
+    span
+    {
+        background-color: #24baef;
+        padding: 2px;
+        border-radius: 5px;
+        margin: 6px;
+    
+    }
+}
+
+.clear
+{
+    clear: both;
+}
+
+.nav-item
+{
+    cursor: pointer;
+}
+
+div{
+    a{
+            color: #fff;
+            list-style-type: none;
+            text-decoration: none;
+    }
+
+
+
+}

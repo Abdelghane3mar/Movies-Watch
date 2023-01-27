@@ -1,0 +1,40 @@
+<div class="row">
+
+        <div class="col-md-4">
+            <img class="w-100" [src]="[image+detailsMovie.poster_path ||  image+detailsTv.poster_path ||  image+detailsPeople.profile_path]" alt="">
+            <!-- <img class="w-100" [src]="image+detailsTv.poster_path" alt="">
+            <img class="w-100" [src]="image+detailsPeople.profile_path" alt=""> -->
+        </div>
+
+        <div class="col-md-8">
+            <div class="details py-4">
+                <h3>{{detailsMovie.original_title}} {{detailsTv.original_name}} {{detailsPeople.name}}</h3>
+                <p>{{detailsMovie.tagline}}  {{detailsTv.tagline}}  {{detailsPeople.tagline}}</p>
+
+                <div *ngFor="let genres of detailsMovie.genres" class="genres pb-3">
+                    <span>{{genres.name}}</span>
+
+                </div>
+                
+                <div *ngFor="let genres of detailsTv.genres" class="genres pb-3">
+                    <span>{{genres.name}}</span>
+
+                </div>
+
+                <div *ngFor="let genres of detailsPeople.genres" class="genres pb-3">
+                    <span>{{genres.name}}</span>
+
+                </div>
+
+                <div class="clear"></div>
+
+                <h6 class="pb-3" >Vote : {{detailsMovie.vote_average}} {{detailsTv.vote_average}}</h6>
+                <h6 class="pb-3" >Vote Count : {{detailsMovie.vote_count}} {{detailsTv.vote_count}}</h6>
+                <h6 class="pb-3" >Popularity : {{detailsMovie.popularity}} {{detailsTv.popularity}}</h6>
+                <h6 class="pb-3" >Release Date : {{detailsMovie.release_date}} {{detailsTv.release_date}}</h6>
+                <p>{{detailsMovie.overview}} {{detailsTv.overview}}</p>
+            </div>
+        </div>
+
+
+    </div>

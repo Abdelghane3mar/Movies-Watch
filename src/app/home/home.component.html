@@ -1,0 +1,89 @@
+<div class="row">
+
+    <div class="col-md-4 py-3 ">
+
+        <div class="br w-25 mb-3 "></div>
+
+        <h1 class="py-2  " > Trending <br> Movies <br> To Watch Now </h1>
+
+        <p class="bm-4" >Most Watched Movies By Weeks</p>
+
+        <div class="br w-95 mt-3"></div>
+
+
+    </div>
+
+    <div *ngFor="let move of trendingMovies"  class="col-md-2 py-3">
+
+        <a [routerLink]= "['/watchs_details' , move.id]" >
+                <div class="movie position-relative">
+                    <img class="w-100" [src]="image+move.poster_path" alt="">
+                    <h4 class="text-center h5 py-3 " >{{move.title}}</h4>
+                    <div class="vote position-absolute">{{move.vote_average| round}}</div>
+                </div>
+        </a>
+
+
+
+    </div>
+
+</div>
+
+<div class="row py-5">
+
+    <div class="col-md-4 py-3 ">
+
+        <div class="br w-25 mb-3 "></div>
+
+        <h1 class="py-2" > Trending <br> Tv <br> To Watch Now </h1>
+
+        <p class="bm-4" >Most Watched Movies By Weeks</p>
+
+        <div class="br w-95 mt-3"></div>
+
+
+    </div>
+
+    <div *ngFor="let tv of trendingTv"  class="col-md-2 py-3">
+
+        <a [routerLink]= "['/watchs_details' , tv.id]" >
+            <div class="tv position-relative">
+                <img class="w-100" [src]="image+tv.poster_path" alt="">
+                <h4 class="text-center h5 py-3 " >{{tv.title}} {{tv.name}}</h4>
+                <div class="vote position-absolute">{{tv.vote_average | round }}</div>
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+<div class="row py-5">
+
+    <div class="col-md-4 py-3 ">
+
+        <div class="br w-25 mb-3 "></div>
+
+        <h1 class="py-2 " > Trending <br> People <br> To Watch Now </h1>
+
+        <p class="bm-4" >Most Watched People By Weeks</p>
+
+        <div class="br w-75 mt-3"></div>
+
+
+    </div>
+
+    <div *ngFor="let person of trendingPerson"  class="col-md-2 py-3">
+        <a [routerLink]= "['/watchs_details' , person.id]" >
+                <div class="person position-relative">
+                    <img class="w-100" [src]="image+person.profile_path" alt="">
+                    <h4 class="text-center h5 py-3 " >{{person.title}} {{person.name}}</h4>
+                    <div class="vote position-absolute">{{person.known_for[0].vote_average | round}}</div>
+                </div>
+        </a>
+
+
+    </div>
+
+</div>

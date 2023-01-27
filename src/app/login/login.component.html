@@ -1,0 +1,34 @@
+<div class="login w-75 m-auto">
+
+    <h1>Log In Form</h1>
+
+<br>
+<br>
+
+<form [formGroup]="registerForm" (ngSubmit)="getFormData(registerForm)" >
+
+    <div *ngIf="err" class="alert  alert-danger ">{{err}}</div>
+
+
+    <label for="">E-mali :</label>
+    <input [class.is-invalid]="registerForm.get('email')?.errors &&  registerForm.get('email')?.touched" formControlName="email" type="email" class="form-control mb-2">
+    <div *ngIf="registerForm.get('email')?.errors&&registerForm.get('email')?.touched"  class="alert alert-danger" role="alert">
+        <p *ngIf="registerForm.get('email')?.errors?.['required']" >Email IS Not Required</p>
+        <p *ngIf="registerForm.get('email')?.errors?.['email']" >Email  In Valid</p>
+    </div>
+
+    <label for="">Password :</label>
+    <input [class.is-invalid]="registerForm.get('password')?.errors &&  registerForm.get('password')?.touched" formControlName="password" type="password" class="form-control mb-2">
+    <div *ngIf="registerForm.get('password')?.errors&&registerForm.get('password')?.touched"  class="alert alert-danger" role="alert">
+        <p *ngIf="registerForm.get('password')?.errors?.['required']" >Password IS Not Required</p>
+        <p *ngIf="registerForm.get('password')?.errors?.['pattern']" >Password  Min IS Not Pattern</p>
+    </div>
+
+    <span  class="text-white" >Don,t have Account ? <a class="text-white"  routerLink="/register">Register  Now </a></span>
+
+    <br>
+
+    <button class="btn btn-primary float-end text-white" [disabled]="registerForm.invalid"  type="submit" >Log In</button>
+</form>
+
+</div>

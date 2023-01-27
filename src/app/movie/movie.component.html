@@ -1,0 +1,18 @@
+        <div class=" p-4 w-75 m-auto">
+                
+                <input type="text "  [(ngModel)]="searchText"   class=" form-control  bg-transparent  text-white ">
+        
+        </div>
+
+        <div class="row">
+                
+        <div *ngFor="let movie of trendingMovies | search:searchText"  class="col-md-3 py-3">
+                <a [routerLink]= "['/watchs_details' , movie.id]" >
+                        <div class="movie position-relative">
+                            <img class="w-100" [src]="image+movie.poster_path" alt="">
+                            <h4 class="text-center h5 py-3 " >{{movie.title}}</h4>
+                            <div class="vote position-absolute">{{movie.vote_average | round }}</div>
+                        </div>
+                </a>
+        </div>
+</div>
